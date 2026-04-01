@@ -2540,9 +2540,30 @@ a.has-flyer .past-event-detail-body {
     font-size: 1.8rem;
   }
 
+  /* Movie / Contact Mobile */
+  .movie-description {
+    text-align: left;
+  }
+
+  .contact-description {
+    text-align: left;
+  }
+
   /* Footer */
   .site-footer {
-    padding: 40px 0 24px;
+    padding: 30px 0 20px;
+  }
+
+  .footer-logo .logo-img {
+    height: 24px;
+  }
+
+  .footer-logo .logo-text {
+    font-size: 1rem;
+  }
+
+  .footer-desc {
+    font-size: 0.6rem;
   }
 }
 

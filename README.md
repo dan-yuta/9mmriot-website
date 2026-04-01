@@ -270,5 +270,3 @@ python -m http.server 8000
 | INFO | 一般お知らせ | グレー |
 | ENTRY | バンド募集 | 緑 |
 | MEDIA | 動画公開 | 紫 |
-
-テスト2

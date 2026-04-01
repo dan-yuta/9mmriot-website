@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initParticles();
   initNews();
+
+  // FOUC防止: CSS読み込み完了後に表示
+  document.body.classList.add('is-loaded');
 });
 
 /* ---------- Header scroll effect ---------- */

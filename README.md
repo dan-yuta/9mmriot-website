@@ -11,9 +11,6 @@
 |---|---|
 | イベント名 | 9mmRIOT（9mmライオット） |
 | 内容 | 9mm Parabellum Bullet オンリーのコピーバンドイベント |
-| 主催 | 段木 裕太 |
-| 開催歴 | 2016年〜（計8回開催、延べ50組以上出演） |
-| 次回開催 | **9mmRIOT vol.09 / 2026年9月26日（土）/ 吉祥寺 Planet K** |
 | 公式X | [@9mmRIOT](https://x.com/9mmRIOT) |
 | YouTube | [@9mmriot970](https://www.youtube.com/@9mmriot970) |
 
@@ -216,22 +213,6 @@ HTML + CSS + JavaScript（フレームワーク不使用）
 
 ---
 
-## 開催履歴
-
-| 回 | 日程 | 会場 | バンド数 | 配信 |
-|---|---|---|---|---|
-| vol.01 | 2016.09.18 | 新宿SUNFACE | 5 | - |
-| vol.02 | 2017.09.17 | 吉祥寺 Planet K | 9 | - |
-| vol.03 | 2018.09.17 | 吉祥寺 Planet K | 9 | - |
-| vol.04 | 2019.09.28 | 西永福JAM | 9 | - |
-| Re:5 | 2022.10.15 | 西永福JAM | 9 | YouTube |
-| 6 | 2023.09.16 | 西永福JAM | 9 | YouTube |
-| 7 | 2024.09.22 | 吉祥寺 Planet K | 9 | YouTube |
-| 8 | 2025.09.06 | 吉祥寺WARP | 9 | YouTube |
-| **9** | **2026.09.26** | **吉祥寺 Planet K** | **募集中** | **YouTube** |
-
----
-
 ## ローカルでの確認方法
 
 ### 方法1: そのまま開く
@@ -290,15 +271,3 @@ python -m http.server 8000
 | ENTRY | バンド募集 | 緑 |
 | MEDIA | 動画公開 | 紫 |
 
----
-
-## SNS・外部リンク
-
-| サービス | URL |
-|---|---|
-| X (Twitter) | https://x.com/9mmRIOT |
-| YouTube | https://www.youtube.com/@9mmriot970 |
-| RIOT8 アーカイブ | https://www.youtube.com/watch?v=ZXG1sieyGQA |
-| RIOT7 アーカイブ | https://www.youtube.com/watch?v=6-djYFp6zEY |
-| RIOT6 アーカイブ | https://www.youtube.com/watch?v=vjbpWhxxE9M |
-| RIOT5 アーカイブ | https://www.youtube.com/watch?v=VvTWgO42kaA |

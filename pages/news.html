@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEWS - 9mmRIOT</title>
+  <meta name="description" content="9mmRIOTからのお知らせ一覧。イベント情報、出演バンド募集など最新情報をお届けします。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../images/logo.png" alt="9mmRIOT" class="logo-img">
+        <span class="logo-text"><span class="logo-9mm">9mm</span><span class="logo-riot">RIOT</span></span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">TOP</a></li>
+          <li><a href="news.html" class="nav-link active">NEWS</a></li>
+          <li><a href="about.html" class="nav-link">ABOUT</a></li>
+          <li><a href="event.html" class="nav-link">EVENT</a></li>
+          <li><a href="../index.html#movie" class="nav-link">MOVIE</a></li>
+          <li><a href="../index.html#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="header-sns">
+        <a href="https://x.com/9mmRIOT" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCzkWViUs8ESkLUqMBKte0iw" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">TOP</a><span>/</span>NEWS
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="section-title">NEWS</h1>
+      <p class="section-subtitle">お知らせ</p>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page-body">
+    <div class="container">
+
+      <!-- Filter Tags -->
+      <div class="news-filter">
+        <button class="news-filter-btn active" data-filter="all">ALL</button>
+        <button class="news-filter-btn" data-filter="event">EVENT</button>
+        <button class="news-filter-btn" data-filter="entry">ENTRY</button>
+        <button class="news-filter-btn" data-filter="info">INFO</button>
+        <button class="news-filter-btn" data-filter="media">MEDIA</button>
+      </div>
+
+      <!-- News List（news.json から自動読み込み。fetch失敗時は以下がそのまま表示） -->
+      <ul class="news-list news-list-full" id="newsListFull">
+        <li class="news-item is-visible" data-category="event">
+          <span class="news-date">2026.04.09</span>
+          <span class="news-tag tag-event">EVENT</span>
+          <a href="event.html" class="news-link">9mmRIOT vol.09 開催決定！2026年9月26日（土）@吉祥寺 Planet K</a>
+        </li>
+        <li class="news-item is-visible" data-category="info">
+          <span class="news-date">2026.04.09</span>
+          <span class="news-tag tag-info">INFO</span>
+          <span class="news-link">9mmRIOT 公式サイトをオープンしました</span>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../images/logo.png" alt="9mmRIOT" class="logo-img">
+        <span class="logo-text"><span class="logo-9mm">9mm</span><span class="logo-riot">RIOT</span></span>
+      </div>
+      <p class="footer-desc">9mm Parabellum Bullet ONLY COPY BAND EVENT</p>
+      <div class="footer-sns">
+        <a href="https://x.com/9mmRIOT" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCzkWViUs8ESkLUqMBKte0iw" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2016-2026 9mmRIOT. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <i class="fa-solid fa-angle-up"></i>
+  </a>
+  <script src="../JS/main.js"></script>
+</body>
+</html>

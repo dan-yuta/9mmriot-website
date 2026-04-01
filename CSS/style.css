@@ -2064,6 +2064,15 @@ a.has-flyer .past-event-detail-body {
   color: var(--color-text-dim);
 }
 
+.entry-notes a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.entry-notes a:hover {
+  text-decoration: underline;
+}
+
 /* Entry Steps (応募の流れ) */
 .entry-steps {
   max-width: 600px;
@@ -2219,9 +2228,9 @@ a.has-flyer .past-event-detail-body {
 }
 
 .entry-info-card h3 {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-text-dim);
+  color: var(--color-text-muted);
   letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
@@ -2237,15 +2246,15 @@ a.has-flyer .past-event-detail-body {
 
 .entry-info-card-value span {
   font-family: var(--font-ja);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text-muted);
 }
 
 .entry-info-card p {
-  font-size: 0.78rem;
-  color: var(--color-text-dim);
-  line-height: 1.7;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
 }
 
 /* Floor Live Diagram */
@@ -2332,9 +2341,29 @@ a.has-flyer .past-event-detail-body {
   }
 
   .entry-step {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .entry-info-card {
+    text-align: left;
+  }
+
+  .entry-info-card-icon {
+    margin: 0 0 12px 0;
+  }
+
+  .entry-welcome-box {
+    text-align: left;
+  }
+
+  .entry-status {
+    text-align: left;
+  }
+
+  .entry-cta {
+    text-align: left;
   }
 }
 

@@ -216,10 +216,15 @@ function initNews() {
 }
 
 function renderNewsList(container, items) {
+  const isSubPage = location.pathname.includes('/pages/');
   container.innerHTML = items.map(item => {
     const tagClass = getTagClass(item.tag);
-    const linkStart = item.link ? `<a href="${item.link}" class="news-link"${item.link.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>` : '<span class="news-link">';
-    const linkEnd = item.link ? '</a>' : '</span>';
+    let href = item.link;
+    if (href && !href.startsWith('http')) {
+      href = isSubPage ? '../' + href : href;
+    }
+    const linkStart = href ? `<a href="${href}" class="news-link"${href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>` : '<span class="news-link">';
+    const linkEnd = href ? '</a>' : '</span>';
 
     return `
       <li class="news-item is-visible" data-category="${item.tag.toLowerCase()}">

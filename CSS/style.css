@@ -781,15 +781,17 @@ ul, ol {
 
 .event-card-flyer-img {
   width: 100%;
-  max-height: 400px;
+  max-height: 280px;
   object-fit: contain;
   background-color: var(--color-black);
   display: block;
+  margin: 0 auto;
 }
 
 .event-card-info {
   flex: 1;
-  padding: 50px 40px;
+  padding: 40px;
+  text-align: center;
 }
 
 .event-card-title {
@@ -803,6 +805,9 @@ ul, ol {
 
 .event-card-meta {
   margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .meta-row {

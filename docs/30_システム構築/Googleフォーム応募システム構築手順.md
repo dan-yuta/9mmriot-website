@@ -24,7 +24,7 @@ Google Apps Script が自動で起動
 
 1. [Google Forms](https://forms.google.com) にアクセス
 2. 「空白のフォーム」を選択
-3. タイトルを「9mmRIOT9 出演バンド応募フォーム」に設定
+3. タイトルを「9mmRIOT vol.09 出演バンド応募フォーム」に設定
 
 ### 1-2. フォームの項目を追加
 

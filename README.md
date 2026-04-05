@@ -11,8 +11,12 @@
 |---|---|
 | イベント名 | 9mmRIOT（9mmライオット） |
 | 内容 | 9mm Parabellum Bullet オンリーのコピーバンドイベント |
+| HP | https://darling-cascaron-e70987.netlify.app （※公開時に変更予定） |
 | 公式X | [@9mmRIOT](https://x.com/9mmRIOT) |
 | YouTube | [@9mmriot970](https://www.youtube.com/@9mmriot970) |
+
+> **NOTE**: HPのURLは公開時に `9mmriot.netlify.app` 等に変更予定です。
+> Netlify管理画面 → Domain management → Edit site name から変更できます。
 
 ---
 

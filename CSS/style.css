@@ -2286,7 +2286,7 @@ a.has-flyer .past-event-detail-body {
   border: 1px solid rgba(196, 30, 58, 0.3);
   border-radius: 4px;
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-white);
   font-weight: 500;
   line-height: 1.7;
 }

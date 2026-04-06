@@ -84,7 +84,8 @@
       <div class="entry-announce">
         <p class="entry-announce-date"><i class="fa-solid fa-bullhorn"></i> バンド募集開始</p>
         <p class="entry-announce-datetime">4/19（日）21:00〜</p>
-        <p class="entry-announce-sub">エントリーフォームは募集開始時に本ページで公開します</p>
+        <p class="entry-announce-sub">エントリーフォーム または XのDMにて受付</p>
+        <p class="entry-announce-sub">主催からの返信をもってエントリー完了となります</p>
       </div>
 
       <!-- はじめての方へ -->
@@ -116,14 +117,39 @@
           <div class="entry-step">
             <div class="entry-step-num">2</div>
             <div class="entry-step-body">
-              <h3>エントリーフォームから応募</h3>
-              <p>エントリーフォームから必要事項を入力して送信してください。</p>
+              <h3>フォームまたはXのDMで応募</h3>
+              <p>以下のどちらかの方法でエントリーしてください。</p>
+
+              <!-- 方法A: フォーム -->
               <div class="entry-dm-template">
-                <div class="entry-dm-label"><i class="fa-solid fa-pen-to-square"></i> 入力項目</div>
+                <div class="entry-dm-label"><i class="fa-solid fa-pen-to-square"></i> 方法1: エントリーフォーム</div>
                 <div class="entry-dm-content">
-                  <p><strong>① バンド名</strong>（仮でも未定でもOK！）</p>
-                  <p><strong>② 各メンバーのパートと名前</strong>（ニックネームでもOK！）</p>
-                  <p><strong>③ 代表者のメールアドレスまたはXアカウント</strong>（連絡用）</p>
+                  <p>エントリーフォームから必要事項を入力して送信してください。<br>
+                  フォームは募集開始時に本ページで公開します。</p>
+                </div>
+              </div>
+
+              <!-- 方法B: X DM -->
+              <div class="entry-dm-template" style="margin-top: 12px;">
+                <div class="entry-dm-label"><i class="fa-brands fa-x-twitter"></i> 方法2: XのDMで応募</div>
+                <div class="entry-dm-content">
+                  <p><a href="https://x.com/9mmRIOT" target="_blank" rel="noopener">@9mmRIOT</a> のDMに以下の内容を送信してください。</p>
+                  <div class="entry-dm-copybox">
+                    <pre id="dmTemplate">9mmRIOT vol.09 出演エントリー
+
+バンド名：
+メンバー：
+　Vo.
+　Gt.
+　Ba.
+　Dr.
+代表者メールアドレス：</pre>
+                    <button class="btn-copy" onclick="navigator.clipboard.writeText(document.getElementById('dmTemplate').textContent).then(()=>{this.textContent='コピーしました！';setTimeout(()=>{this.textContent='コピー'},2000)})">コピー</button>
+                  </div>
+                  <div class="entry-step-warning" style="margin-top: 10px;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> XのDMは相互フォローでないと送受信できない場合があります。<br>
+                    応募前に <a href="https://x.com/9mmRIOT" target="_blank" rel="noopener">@9mmRIOT</a> と相互フォローになっていることを確認してください。
+                  </div>
                 </div>
               </div>
             </div>
@@ -132,8 +158,8 @@
           <div class="entry-step">
             <div class="entry-step-num">3</div>
             <div class="entry-step-body">
-              <h3>出演決定！</h3>
-              <p>主催より確認のご連絡をいたします。<br>
+              <h3>エントリー完了！</h3>
+              <p><strong>主催からの返信をもってエントリー完了</strong>となります。<br>
               セトリの1次募集は6月上旬頃を予定しています。</p>
             </div>
           </div>
@@ -211,6 +237,10 @@
             <i class="fa-solid fa-pen-to-square"></i> エントリーフォームはこちら
           </a>
           -->
+          <a href="https://x.com/9mmRIOT" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 12px;">
+            <i class="fa-brands fa-x-twitter"></i> XのDMで応募する
+          </a>
+          <p class="entry-cta-sub">主催からの返信をもってエントリー完了となります。</p>
         </div>
       </section>
 

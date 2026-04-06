@@ -2159,6 +2159,46 @@ a.has-flyer .past-event-detail-body {
   line-height: 2;
 }
 
+/* DM Copy Box */
+.entry-dm-copybox {
+  position: relative;
+  margin-top: 12px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.entry-dm-copybox pre {
+  font-family: var(--font-ja);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.btn-copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-copy:hover {
+  background-color: var(--color-accent-hover);
+}
+
 .entry-note-small {
   font-size: 0.85rem;
   color: var(--color-text-dim);

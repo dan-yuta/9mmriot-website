@@ -68,116 +68,7 @@ Google Apps Script が自動で起動
 
 ---
 
-## STEP 2: フォームの回答をスプレッドシートに紐づける
-
-1. フォーム編集画面で「回答」タブをクリック
-2. 「スプレッドシートにリンク」（緑のアイコン）をクリック
-3. **「既存のスプレッドシートを選択」** を選ぶ
-4. 対象のスプレッドシート `2026/yy/dd_9mmRIOT vol.09` を選択
-5. → 「フォームの回答」というシートが自動作成される
-
----
-
-## STEP 3: Google Apps Script で自動転記を設定
-
-フォーム回答が来たら「バンドメンバープロフィール」シートに自動で書き込むスクリプトを設定します。
-
-### 3-1. スクリプトエディタを開く
-
-1. スプレッドシートを開く
-2. メニュー「拡張機能」→「Apps Script」をクリック
-
-### 3-2. スクリプトを貼り付ける
-
-エディタのコードをすべて削除し、以下を貼り付けてください。
-
-```javascript
-/**
- * フォーム送信時に「バンドメンバープロフィール」シートへ自動転記する
- */
-function onFormSubmit(e) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const profileSheet = ss.getSheetByName('バンドメンバープロフィール');
-
-  if (!profileSheet) {
-    Logger.log('「バンドメンバープロフィール」シートが見つかりません');
-    return;
-  }
-
-  const responses = e.namedValues;
-
-  const bandName = responses['バンド名'][0];
-
-  // メンバー情報を収集（最大5人）
-  const members = [];
-  for (let i = 1; i <= 5; i++) {
-    const partKey = 'メンバー' + i + ' パート';
-    const nameKey = 'メンバー' + i + ' 名前';
-    const part = responses[partKey] ? responses[partKey][0] : '';
-    const name = responses[nameKey] ? responses[nameKey][0] : '';
-    if (part && name) {
-      members.push({ part: part, name: name });
-    }
-  }
-
-  if (members.length === 0) return;
-
-  // 現在のデータの最終行を取得
-  const lastRow = profileSheet.getLastRow();
-
-  // 空行を1行入れてから書き込み（バンド間の区切り）
-  const startRow = lastRow + 2;
-
-  // 出演番号を計算（B列の最大値 + 1）
-  const bColValues = profileSheet.getRange('B3:B' + lastRow).getValues();
-  let maxNum = 0;
-  bColValues.forEach(row => {
-    const val = parseInt(row[0]);
-    if (!isNaN(val) && val > maxNum) maxNum = val;
-  });
-  const bandNum = maxNum + 1;
-
-  // 各メンバーを1行ずつ書き込み
-  members.forEach((member, index) => {
-    const row = startRow + index;
-    // B列: 出演番号（1人目のみ）
-    if (index === 0) {
-      profileSheet.getRange(row, 2).setValue(bandNum);
-    }
-    // C列: バンド名（1人目のみ）
-    if (index === 0) {
-      profileSheet.getRange(row, 3).setValue(bandName);
-    }
-    // D列: パート
-    profileSheet.getRange(row, 4).setValue(member.part);
-    // E列: メンバー名
-    profileSheet.getRange(row, 5).setValue(member.name);
-  });
-
-  Logger.log('転記完了: ' + bandName + '（' + members.length + '人）');
-}
-```
-
-### 3-3. トリガーを設定
-
-1. Apps Script エディタの左メニューで「トリガー」（時計アイコン）をクリック
-2. 「トリガーを追加」をクリック
-3. 以下のように設定:
-   - **実行する関数**: `onFormSubmit`
-   - **イベントのソース**: スプレッドシートから
-   - **イベントの種類**: フォーム送信時
-4. 「保存」をクリック
-5. Google アカウントの権限確認が出たら「許可」をクリック
-
-### 3-4. テスト
-
-1. フォームのプレビューからテスト回答を送信
-2. 「バンドメンバープロフィール」シートに追記されていることを確認
-3. テストデータを削除
-
----
-
-## STEP 4: HPにフォームのリンクを設定
+## STEP 2: HPにフォームのリンクを設定
 
 募集開始時に `pages/entry-riot9.html` を編集します。
 
@@ -192,6 +83,32 @@ function onFormSubmit(e) {
 
 ---
 
+## STEP 3: 応募が来たらスプレッドシートに手動転記
+
+フォームまたはX DMで応募が届いたら、以下のスプレッドシートに手動で転記します。
+
+### 転記先
+
+スプレッドシート `2026/yy/dd_9mmRIOT vol.09` の「バンドメンバープロフィール」シート
+
+### 転記する列
+
+| 列 | 内容 | 備考 |
+|---|---|---|
+| B | 出演番号 | 1人目の行のみ記入（連番） |
+| C | バンド名 | 1人目の行のみ記入 |
+| D | パート | Vo., Gt., Vo./Gt., Ba., Dr. |
+| E | メンバー名 | |
+
+### 転記の手順
+
+1. フォームの回答一覧（またはX DM）を確認
+2. スプレッドシートの最終行の下に**1行空けて**から記入開始
+3. メンバーを1人1行で記入
+4. 応募者にメールまたはDMで受付確認 + LINEグループ招待を送る
+
+---
+
 ## 運用の流れ
 
 ```
@@ -199,25 +116,11 @@ function onFormSubmit(e) {
    → Xで告知 + entry-riot9.html のフォームリンクを有効化
 
 2. 応募受付中
-   → フォーム回答 → スプレッドシートに自動転記
-   → スプレッドシートで応募状況を確認
+   → フォーム回答 or X DM を確認
+   → スプレッドシートに手動転記
+   → 応募者に返信 + LINEグループ招待
 
 3. 募集締切
    → フォームの「回答を受付中」をOFFに変更
    → entry-riot9.html のステータスを「締切」に変更
 ```
-
----
-
-## トラブルシューティング
-
-### スプレッドシートに反映されない場合
-
-1. Apps Script の「実行ログ」を確認
-2. トリガーが正しく設定されているか確認
-3. シート名が「バンドメンバープロフィール」と完全一致しているか確認
-
-### フォームの項目名を変更した場合
-
-スクリプト内の `responses['メンバー1 パート']` などのキー名も合わせて変更してください。
-項目名とスクリプトのキー名が一致しないと動作しません。

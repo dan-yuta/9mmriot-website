@@ -33,8 +33,8 @@ Google Apps Script が自動で起動
 | # | 項目名 | タイプ | 必須 | 備考 |
 |---|---|---|---|---|
 | 1 | バンド名 | 記述式（短文） | 必須 | 説明文:「仮でも未定でもOKです！」 |
-| 2 | メンバー人数 | プルダウン | 必須 | 選択肢: 2, 3, 4, 5, 6, 7, 8 |
-| 3 | メンバー1 パート | プルダウン | 必須 | 選択肢: Vo., Gt., Vo./Gt., Ba., Dr., Key., その他 |
+| 2 | メンバー人数 | プルダウン | 必須 | 選択肢: 2, 3, 4, 5 |
+| 3 | メンバー1 パート | プルダウン | 必須 | 選択肢: Vo., Gt., Vo./Gt., Ba., Dr. |
 | 4 | メンバー1 名前 | 記述式（短文） | 必須 | 説明文:「ニックネームでもOKです！」 |
 | 5 | メンバー2 パート | プルダウン | 必須 | 同上の選択肢 |
 | 6 | メンバー2 名前 | 記述式（短文） | 必須 | |
@@ -44,15 +44,8 @@ Google Apps Script が自動で起動
 | 10 | メンバー4 名前 | 記述式（短文） | 任意 | |
 | 11 | メンバー5 パート | プルダウン | 任意 | |
 | 12 | メンバー5 名前 | 記述式（短文） | 任意 | |
-| 13 | メンバー6 パート | プルダウン | 任意 | |
-| 14 | メンバー6 名前 | 記述式（短文） | 任意 | |
-| 15 | メンバー7 パート | プルダウン | 任意 | |
-| 16 | メンバー7 名前 | 記述式（短文） | 任意 | |
-| 17 | メンバー8 パート | プルダウン | 任意 | |
-| 18 | メンバー8 名前 | 記述式（短文） | 任意 | |
-| 19 | バンドPR | 段落（長文） | 任意 | 説明文:「バンドの紹介文があればご記入ください」 |
-| 20 | 代表者のXアカウント | 記述式（短文） | 必須 | 説明文:「連絡用に使用します（例: @xxxx）」 |
-| 21 | 備考・質問 | 段落（長文） | 任意 | |
+| 13 | 代表者のメールアドレス | 記述式（短文） | 必須 | 説明文:「連絡用に使用します」 |
+| 14 | 備考・質問 | 段落（長文） | 任意 | 説明文:「6人以上の場合は、こちらに追加メンバーのパートと名前をご記入ください」 |
 
 ### 1-3. フォームの設定
 
@@ -101,11 +94,10 @@ function onFormSubmit(e) {
   const responses = e.namedValues;
 
   const bandName = responses['バンド名'][0];
-  const bandPR = responses['バンドPR'] ? responses['バンドPR'][0] : '';
 
-  // メンバー情報を収集（最大8人）
+  // メンバー情報を収集（最大5人）
   const members = [];
-  for (let i = 1; i <= 8; i++) {
+  for (let i = 1; i <= 5; i++) {
     const partKey = 'メンバー' + i + ' パート';
     const nameKey = 'メンバー' + i + ' 名前';
     const part = responses[partKey] ? responses[partKey][0] : '';
@@ -147,10 +139,6 @@ function onFormSubmit(e) {
     profileSheet.getRange(row, 4).setValue(member.part);
     // E列: メンバー名
     profileSheet.getRange(row, 5).setValue(member.name);
-    // F列: バンドPR（1人目のみ）
-    if (index === 0 && bandPR) {
-      profileSheet.getRange(row, 6).setValue(bandPR);
-    }
   });
 
   Logger.log('転記完了: ' + bandName + '（' + members.length + '人）');
@@ -183,7 +171,7 @@ function onFormSubmit(e) {
 ```html
 <!-- この部分のコメントを外してURLを設定 -->
 <a href="GOOGLE_FORM_URL" target="_blank" rel="noopener" class="btn btn-primary">
-  <i class="fa-solid fa-pen-to-square"></i> 応募フォームはこちら
+  <i class="fa-solid fa-pen-to-square"></i> エントリーフォームはこちら
 </a>
 ```
 
@@ -203,7 +191,7 @@ function onFormSubmit(e) {
 
 3. 募集締切
    → フォームの「回答を受付中」をOFFに変更
-   → entry-riot9.html のステータスバッジを「締切」に変更
+   → entry-riot9.html のステータスを「締切」に変更
 ```
 
 ---

@@ -2161,12 +2161,13 @@ a.has-flyer .past-event-detail-body {
 
 /* DM Copy Box */
 .entry-dm-copybox {
-  position: relative;
   margin-top: 12px;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 4px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .entry-dm-copybox pre {
@@ -2176,12 +2177,13 @@ a.has-flyer .past-event-detail-body {
   white-space: pre-wrap;
   line-height: 1.8;
   margin: 0;
+  order: 1;
 }
 
 .btn-copy {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  align-self: flex-end;
+  order: 2;
+  margin-top: 12px;
   font-family: var(--font-en);
   font-size: 0.75rem;
   font-weight: 600;
@@ -2770,6 +2772,19 @@ a.has-flyer .past-event-detail-body {
   /* Hero高さ削減 */
   .hero {
     min-height: 400px;
+  }
+
+  /* ステップを縦並びに変更 */
+  .entry-step {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 16px;
+  }
+
+  .entry-step-num {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 
   /* ステップ区切り線非表示 */

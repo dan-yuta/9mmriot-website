@@ -636,6 +636,12 @@ ul, ol {
   color: var(--color-white);
 }
 
+.about-unofficial {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-bottom: 16px;
+}
+
 .about-stats {
   display: flex;
   gap: 40px;
@@ -1160,6 +1166,13 @@ a.past-event-card {
 
 .footer-sns a:hover {
   color: var(--color-accent);
+}
+
+.footer-unofficial {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  margin-bottom: 12px;
+  opacity: 0.6;
 }
 
 .footer-copy {

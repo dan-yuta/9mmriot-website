@@ -2280,6 +2280,14 @@ a.has-flyer .past-event-detail-body {
   text-decoration: underline;
 }
 
+.entry-step-body a.btn {
+  color: var(--color-white);
+}
+
+.entry-step-body a.btn:hover {
+  text-decoration: none;
+}
+
 .entry-step-tip {
   margin-top: 10px;
   padding: 10px 14px;
@@ -2551,6 +2559,13 @@ a.has-flyer .past-event-detail-body {
 
 .entry-cta-sub a:hover {
   text-decoration: underline;
+}
+
+.entry-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* ============================================================
